@@ -1,0 +1,45 @@
+# Product Added to Cart
+
+### 
+
+## Javascript Code
+```js
+window.appEventData = window.appEventData || [];
+appEventData.push({
+  "event": "add_to_cart",
+  "apollo_event": "Product Added to Cart",
+    "cart": {
+        "additionContext": "<additionContext>",
+        "cartID": "<cartID>",
+        "cartModifications": <cartModifications>
+    },
+    "eventDetails": {
+        "multiAdditionDetail": "<multiAdditionDetail>"
+    },
+    "product": [
+        {
+            "fulfillment": {
+                "method": "<method>"
+            },
+            "productInfo": {
+                "productID": "<productID>"
+            }
+        }
+    ]
+});
+```
+
+## Variable Definitions
+
+|Field|Type|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|additionContext|string|Conveys the context of a cart addition. |PLP, PDP, Wishlist, Registry|||||||
+|cartID|string|Back-end identifier for a shopping cart|12345, 435678, 34567, XCV456, XCV876|||||||
+|cartModifications|integer|Count of times the change in product quantity was the result of a cart modification.||||||||
+|method|string|Captures the shipping fullfilment method associated with a product.||||||||
+|multiAdditionDetail|string|Provides details of multiple product additions to carts, wishlists, registries, etc.|all items, 3 of 5, 2 of 4|||||||
+|productID|string|Unique Identifier of a product or offering.  Must match the format of back-end systems if used as a key for import of product meta data. Most often, one level above SKU for products with SKU variants. |155, 65588, 987764448|||||||
+
+
+
+
